@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="container">
+        <div class="masthead">
+            <div class="header">
+               <!-- <img src="~/Images/Ticket3.jpg" width="200" height="200" />-->
+                <h1 class="text-center" >Ticket</></h1>
+
+            </div>
+
+            <ul class="nav nav-justified">
+                <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "active" })</li>
+                <li>@Html.ActionLink("Book Ticket", "Index", "Reservation")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Ticket.com</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
